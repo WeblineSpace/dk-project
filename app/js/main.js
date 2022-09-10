@@ -1,13 +1,22 @@
 // ------------------ Input visibility --------------
 
-const searchWrapper = document.querySelector(".header__search");
 const searchInput = document.querySelector(".header__search > input");
+const searchWrapper = document.querySelector(".header__search");
+const submitButton = document.querySelector(".header__button");
 const logoText = document.querySelector(".logo__text");
 
 searchWrapper.addEventListener("mouseenter", () => {
   searchWrapper.classList.add("header__search--hovered");
   logoText.classList.add("logo__text--hidden");
 });
+
+searchInput.addEventListener('keydown', () => {
+  if (searchInput.value) {
+    submitButton.setAttribute('type', 'submit')
+  } else {
+    submitButton.setAttribute("type", "button");
+  }
+})
 
 searchWrapper.addEventListener("mouseleave", () => {
   if (!searchInput.value) {
@@ -36,7 +45,7 @@ if (newsElements.length) {
   showMoreElements();
 }
 
-showMoreButton?.addEventListener('click', () => {
-  elementToShow += 4
-  showMoreElements()
-})
+showMoreButton?.addEventListener("click", () => {
+  elementToShow += 4;
+  showMoreElements();
+});
