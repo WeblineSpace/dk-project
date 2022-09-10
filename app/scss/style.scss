@@ -1,0 +1,352 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.logo {
+  display: flex;
+  max-width: 420px;
+  align-items: center;
+
+  &__text {
+    color: #FFE843;
+    margin-left: 17px;
+  }
+}
+
+.header {
+  padding-top: 36px;
+
+  .container {
+    padding-bottom: 50px;
+    border-bottom: 2px solid #F5DB24;
+    margin-bottom: 83px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__search {
+    position: relative;
+    min-width: 360px;
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    input {
+      position: relative;
+      max-width: 360px;
+      width: 0;
+      opacity: 0;
+      margin-left: auto;
+      background: #F5DB24;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      padding: 5px 40px 5px 15px;
+      transition: width 0.6s, opacity 0.7s;
+    }
+
+    button {
+      right: 7px;
+      top: 8px;
+      z-index: 1;
+
+      position: absolute;
+
+      svg path {
+        transition: fill 0.3s;
+      }
+    }
+
+    &--hovered {
+      input {
+        opacity: 1;
+        width: 360px;
+      }
+
+      button {
+        svg path {
+          fill: #7B6E12;
+        }
+      }
+    }
+  }
+}
+
+.preview {
+  margin-bottom: 90px;
+
+  &__slide {
+    margin: 0 15px;
+  }
+}
+
+.news {
+  padding-bottom: 140px;
+
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__item {
+    display: none;
+    max-width: 580px;
+    margin-bottom: 100px;
+  }
+
+  &__top {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: #000000;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      background-color: #E30613;
+      border-radius: 50%;
+    }
+
+    &--blue {
+      &::before {
+        background-color: #0F54A3;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-family: 'Cormorant',
+      serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 120%;
+    color: #000000;
+  }
+
+  &__date {
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 23px;
+    line-height: 135%;
+    color: #E30613;
+    padding-left: 29px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 19px;
+      height: 19px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../images/calendar.svg');
+    }
+  }
+
+  &__link {
+    padding: 9px 36px;
+    border-radius: 20px;
+    font-weight: 400;
+    margin-top: 22px;
+    display: none;
+    width: fit-content;
+    font-size: 15px;
+    line-height: 135%;
+    color: white;
+    background-color: #E30613;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #FFA536;
+    }
+  }
+
+  &__showmore {
+    display: block;
+
+    width: fit-content;
+    margin: -40px auto 0;
+    transition: margin 0.3s, opacity 0.3s;
+
+    svg path {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      svg path {
+        fill: #7B6E12;
+      }
+    }
+
+    &:active {
+      opacity: 0.4;
+      margin: -30px auto 0;
+    }
+  }
+
+  &__bottom {
+    max-width: 774px;
+    margin: 0 auto 0 13%;
+  }
+
+  &__page {
+    padding-bottom: 250px;
+    &-subtitle {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 145%;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 32px;
+    }
+
+    &-item {
+      max-width: 872px;
+      margin: 0 auto 100px;
+    }
+
+    &-date {
+      position: relative;
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 135%;
+      color: #E30613;
+      padding-left: 29px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 19px;
+        height: 19px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../images/calendar.svg');
+      }
+    }
+
+    &-img,
+    &-text {
+      width: 100%;
+      max-width: 778px;
+    }
+
+    &-text {
+      margin-bottom: 40px;
+    }
+
+    &-img {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      margin: 0 auto 20px;
+      font-family: 'Cormorant', sans-serif;
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 135%;
+      color: #000000;
+    }
+
+    &-bottom {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 145%;
+      margin-bottom: 20px;
+      color: #FF191B;
+    }
+
+    &-image {
+      display: block;
+      width: 366px;
+      height: 210.94px;
+      object-fit: cover;
+      margin-bottom: 30px
+    }
+
+    &-link {
+      display: block;
+      color: white;
+      width: fit-content;
+      background: #FF191B;
+      border-radius: 30px;
+      padding: 10px 50px;
+    }
+
+    &-slide {
+      max-width: 370px;
+    }
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &-dot {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 135%;
+      color: #000000;
+      padding-left: 25px;
+      margin-bottom: 15px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 15px;
+        height: 15px;
+        background-color: #E30613;
+        border-radius: 50%;
+      }
+
+      &--blue {
+        &::before {
+          background-color: #0F54A3;
+        }
+      }
+    }
+
+    &-cardtitle {
+      font-family: 'Cormorant',
+      sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 21px;
+      line-height: 135%;
+      color: #000000;
+    }
+
+    &-slide {
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@import 'media'
