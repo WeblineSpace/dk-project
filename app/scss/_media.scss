@@ -85,6 +85,20 @@
     }
   }
 
+  .preview {
+    &__text {
+      background: #FF191B;
+      font-size: 15px;
+      line-height: 135%;
+      border-radius: 25px;
+      padding: 4px 10px;
+      text-transform: uppercase;
+      color: #fff;
+      top: 11px;
+      left: 10px;
+    }
+  }
+
   .news {
 
     &__list {

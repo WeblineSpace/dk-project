@@ -84,7 +84,28 @@
   margin-bottom: 90px;
 
   &__slide {
+    position: relative;
     margin: 0 15px;
+
+    &:hover {
+      div {
+        color: #FFA536;
+        border-color: #FFA536;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 135%;
+    text-transform: uppercase;
+    color: #ffffff;
+    top: 40px;
+    left: 40px;
+    position: absolute;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
   }
 }
 
